@@ -13,7 +13,7 @@ const Listado = () => {
                     <div className="row gap-3">
                         <Card className="mx-auto" style={{ width: '18rem' }}>
                         <Card.Header>Tipo: Fantasma</Card.Header>
-                        <Card.Img variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/gengar.gif" />
+                        <Card.Img width="80" height="100" variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/gengar.gif" className="d-block mx-auto w-50" />
                         <Card.Body>
                             <Card.Title className="text-center">Gengar</Card.Title>
                             <ListGroup>
@@ -29,7 +29,7 @@ const Listado = () => {
 
                         <Card className="mx-auto" style={{ width: '18rem' }}>
                         <Card.Header>Tipo: Fantasma</Card.Header>
-                        <Card.Img variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/haunter.gif" />
+                        <Card.Img width="80" height="100" variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/haunter.gif" className="d-block mx-auto w-50" />
                         <Card.Body>
                             <Card.Title className="text-center">Haunter</Card.Title>
                             <ListGroup>
@@ -45,7 +45,7 @@ const Listado = () => {
 
                         <Card className="mx-auto" style={{ width: '18rem' }}>
                         <Card.Header>Tipo: Fantasma</Card.Header>
-                        <Card.Img variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/gastly.gif" />
+                        <Card.Img width="80" height="100" variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/gastly.gif" className="d-block mx-auto w-50" />
                         <Card.Body>
                             <Card.Title className="text-center">Gastly</Card.Title>
                             <ListGroup>
