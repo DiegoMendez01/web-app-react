@@ -1,3 +1,55 @@
+# WebAPP de Listado de Pokemon
+
+_Sistema desarrollado por Diego Mendez con ayuda de AnderCode_
+
+## Comenzando 🚀
+
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+
+### Pre-requisitos 📋
+
+_Para poder inicializar el sistema se requiere lo siguiente :_
+
+```
+1. Node JS.
+2. Visual Studio Code (Editor de Codigo).
+3. GIT.
+4. React.
+```
+
+### Instalación 🔧
+```
+_Bajar los archivos
+
+```
+
+## Despliegue 📦
+
+_Construir y publicar_
+
+## Construido con 🛠️
+
+_Las herramientas utilizadas son las siguientes_
+
+* [Visual Studio Code](https://code.visualstudio.com/) - Editor de Codigo
+* [Git](https://git-scm.com/) - Manejador de Versiones
+
+## Contribuyendo 🖇️
+
+Por favor lee el [CONTRIBUTING.md](https://github.com/tu/proyecto/wiki) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+
+## Wiki 📖
+
+Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+
+## Autores ✒️
+
+* **Anderson Bastidas** - *Trabajo Inicial* - [AndersX87](https://github.com/Anders87x) - *Pagina Web* - [AndersX87](https://anders87x.github.io/)
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -39,8 +91,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Diego Fernando Mendez Rojas
