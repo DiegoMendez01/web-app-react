@@ -8,6 +8,7 @@ export async function getPokemons() : Promise<Pokemon[]> {
     const datos    = await response.json();
     const pokemons = datos.results.map((pokemon:any) => ({
         id: pokemon.national_number,
+        type: pokemon.type[0],
         name: pokemon.name,
         imggif: pokemon.sprites['animated'],
         imgnormal: pokemon.sprites['normal'],

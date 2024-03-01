@@ -1,5 +1,6 @@
 export type Pokemon = {
     id: string;
+    type: Array<any>;
     name: string;
     imggif: string;
     imglarge: string;
