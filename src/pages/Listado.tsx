@@ -15,6 +15,7 @@ import Figure from 'react-bootstrap/Figure';
 const Listado = () => {
 
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+    const [query, setQuery] = useState("");
     // Llamar controlador y obtener todos los pokemons
     useEffect(() => {
         const obtenerTodos = async() => {
@@ -24,13 +25,25 @@ const Listado = () => {
         obtenerTodos();
     });
 
+    const filtrarPokemon = pokemons?.slice(0, 151).filter((pokemon) => {
+        return pokemon.name.toLowerCase().match(query.toLowerCase());
+    });
+
     return(
         <>
             <h1>Pokemon Diego</h1>
+            <header>
+                <input
+                    value={query}
+                    placeholder='Buscar pokemon'
+                    onChange={(event) => setQuery(event.target.value.trim())}
+                    type="text"
+                />
+            </header>
             <div className="content-wrapper">
                 <div className="content">
                     <div className="row gap-3">
-                        {pokemons?.slice(0, 100).map((pokemons) => (
+                        {filtrarPokemon?.slice(0, 151).map((pokemons) => (
                             <Card className="mx-auto" style={{ width: '18rem' }}>
                             <Card.Header>Tipo: {pokemons.type}</Card.Header>
                             <Card.Img width="80" height="100" variant="top" src={pokemons.imggif} className="d-block mx-auto w-50" />
