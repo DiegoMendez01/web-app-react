@@ -1,63 +1,95 @@
-import react from 'react';
+import react, {useState, useEffect} from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Importar controlador y modelo
+import { getPokemons } from '../controllers/getpokemon';
+import { Pokemon } from '../models/pokemon.m';
+import Figure from 'react-bootstrap/Figure';
+
+/*
+* Metodo slice() devuelve una copia de una parte del array dentro de un nuevo array
+*/
 const Listado = () => {
+
+    const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+    const [query, setQuery] = useState("");
+    // Llamar controlador y obtener todos los pokemons
+    useEffect(() => {
+        const obtenerTodos = async() => {
+            const allPokemons = await getPokemons();
+            setPokemons(allPokemons);
+        }
+        obtenerTodos();
+    });
+
+    const filtrarPokemon = pokemons?.slice(0, 151).filter((pokemon) => {
+        return pokemon.name.toLowerCase().match(query.toLowerCase());
+    });
+
     return(
         <>
             <h1>Pokemon Diego</h1>
+            <header>
+                <input
+                    value={query}
+                    placeholder='Buscar pokemon'
+                    onChange={(event) => setQuery(event.target.value.trim())}
+                    type="text"
+                />
+            </header>
             <div className="content-wrapper">
                 <div className="content">
                     <div className="row gap-3">
-                        <Card className="mx-auto" style={{ width: '18rem' }}>
-                        <Card.Header>Tipo: Fantasma</Card.Header>
-                        <Card.Img width="80" height="100" variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/gengar.gif" className="d-block mx-auto w-50" />
-                        <Card.Body>
-                            <Card.Title className="text-center">Gengar</Card.Title>
-                            <ListGroup>
-                                <ListGroup.Item>HP: ##</ListGroup.Item>
-                                <ListGroup.Item>Ataque: ##</ListGroup.Item>
-                                <ListGroup.Item>Defensa: ##</ListGroup.Item>
-                                <ListGroup.Item>E. Ataque: ##</ListGroup.Item>
-                                <ListGroup.Item>E. Defensa: ##</ListGroup.Item>
-                                <ListGroup.Item>Velocidad: ##</ListGroup.Item>
-                            </ListGroup>
-                        </Card.Body>
-                        </Card>
-
-                        <Card className="mx-auto" style={{ width: '18rem' }}>
-                        <Card.Header>Tipo: Fantasma</Card.Header>
-                        <Card.Img width="80" height="100" variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/haunter.gif" className="d-block mx-auto w-50" />
-                        <Card.Body>
-                            <Card.Title className="text-center">Haunter</Card.Title>
-                            <ListGroup>
-                                <ListGroup.Item>HP: ##</ListGroup.Item>
-                                <ListGroup.Item>Ataque: ##</ListGroup.Item>
-                                <ListGroup.Item>Defensa: ##</ListGroup.Item>
-                                <ListGroup.Item>E. Ataque: ##</ListGroup.Item>
-                                <ListGroup.Item>E. Defensa: ##</ListGroup.Item>
-                                <ListGroup.Item>Velocidad: ##</ListGroup.Item>
-                            </ListGroup>
-                        </Card.Body>
-                        </Card>
-
-                        <Card className="mx-auto" style={{ width: '18rem' }}>
-                        <Card.Header>Tipo: Fantasma</Card.Header>
-                        <Card.Img width="80" height="100" variant="top" src="https://img.pokemondb.net/sprites/black-white/anim/normal/gastly.gif" className="d-block mx-auto w-50" />
-                        <Card.Body>
-                            <Card.Title className="text-center">Gastly</Card.Title>
-                            <ListGroup>
-                                <ListGroup.Item>HP: ##</ListGroup.Item>
-                                <ListGroup.Item>Ataque: ##</ListGroup.Item>
-                                <ListGroup.Item>Defensa: ##</ListGroup.Item>
-                                <ListGroup.Item>E. Ataque: ##</ListGroup.Item>
-                                <ListGroup.Item>E. Defensa: ##</ListGroup.Item>
-                                <ListGroup.Item>Velocidad: ##</ListGroup.Item>
-                            </ListGroup>
-                        </Card.Body>
-                        </Card>
+                        {filtrarPokemon?.slice(0, 151).map((pokemons) => (
+                            <Card className="mx-auto" style={{ width: '18rem' }}>
+                            <Card.Header>Tipo: {pokemons.type}</Card.Header>
+                            <Card.Img width="80" height="100" variant="top" src={pokemons.imggif} className="d-block mx-auto w-50" />
+                            <Card.Body>
+                                <Card.Title className="text-center"><b>{pokemons.id} - {pokemons.name}</b></Card.Title>
+                                <ListGroup>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                                            /><b> HP:</b> {pokemons.hp}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/297/297837.png"
+                                            /><b> Ataque:</b> {pokemons.attack}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/5448/5448364.png"
+                                            /><b> Defensa:</b> {pokemons.defense}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/1457/1457939.png"
+                                            /><b> E. Ataque:</b> {pokemons.sp_atk}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/1469/1469840.png"
+                                            /><b> E. Defensa:</b> {pokemons.sp_def}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/3563/3563460.png"
+                                            /><b> Velocidad:</b> {pokemons.speed}</ListGroup.Item>
+                                </ListGroup>
+                            </Card.Body>
+                            </Card>
+                        ))}
                     </div>
                 </div>
             </div>
