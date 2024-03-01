@@ -42,10 +42,6 @@ Por favor lee el [CONTRIBUTING.md](https://github.com/tu/proyecto/wiki) para det
 
 Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
 
-## Autores ✒️
-
-* **Anderson Bastidas** - *Trabajo Inicial* - [AndersX87](https://github.com/Anders87x) - *Pagina Web* - [AndersX87](https://anders87x.github.io/)
-
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia - mira el archivo [LICENSE.md](LICENSE.md) para detalles
@@ -93,4 +89,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Author
 
-Diego Fernando Mendez Rojas
+* **Diego Mendez Rojas** - *Desarrollado* | **David Anderson Bastidas** - *Instructor Curso* - *Pagina Web* - [AndersX87](https://anders87x.github.io/)
