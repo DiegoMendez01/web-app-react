@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Importar controlador y modelo
 import { getPokemons } from '../controllers/getpokemon';
 import { Pokemon } from '../models/pokemon.m';
+import Figure from 'react-bootstrap/Figure';
 
 /*
 * Metodo slice() devuelve una copia de una parte del array dentro de un nuevo array
@@ -29,19 +30,49 @@ const Listado = () => {
             <div className="content-wrapper">
                 <div className="content">
                     <div className="row gap-3">
-                        {pokemons?.slice(0, 10).map((pokemons) => (
+                        {pokemons?.slice(0, 100).map((pokemons) => (
                             <Card className="mx-auto" style={{ width: '18rem' }}>
                             <Card.Header>Tipo: {pokemons.type}</Card.Header>
                             <Card.Img width="80" height="100" variant="top" src={pokemons.imggif} className="d-block mx-auto w-50" />
                             <Card.Body>
                                 <Card.Title className="text-center"><b>{pokemons.id} - {pokemons.name}</b></Card.Title>
                                 <ListGroup>
-                                    <ListGroup.Item><b>HP:</b> {pokemons.hp}</ListGroup.Item>
-                                    <ListGroup.Item><b>Ataque:</b> {pokemons.attack}</ListGroup.Item>
-                                    <ListGroup.Item><b>Defensa:</b> {pokemons.defense}</ListGroup.Item>
-                                    <ListGroup.Item><b>E. Ataque:</b> {pokemons.sp_atk}</ListGroup.Item>
-                                    <ListGroup.Item><b>E. Defensa:</b> {pokemons.sp_def}</ListGroup.Item>
-                                    <ListGroup.Item><b>Velocidad:</b> {pokemons.speed}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                                            /><b> HP:</b> {pokemons.hp}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/297/297837.png"
+                                            /><b> Ataque:</b> {pokemons.attack}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/5448/5448364.png"
+                                            /><b> Defensa:</b> {pokemons.defense}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/1457/1457939.png"
+                                            /><b> E. Ataque:</b> {pokemons.sp_atk}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/1469/1469840.png"
+                                            /><b> E. Defensa:</b> {pokemons.sp_def}</ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Figure.Image
+                                            width={16}
+                                            height={16}
+                                            src="https://cdn-icons-png.flaticon.com/128/3563/3563460.png"
+                                            /><b> Velocidad:</b> {pokemons.speed}</ListGroup.Item>
                                 </ListGroup>
                             </Card.Body>
                             </Card>

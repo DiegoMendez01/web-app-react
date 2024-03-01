@@ -10,7 +10,7 @@ export async function getPokemons() : Promise<Pokemon[]> {
         id: pokemon.national_number,
         type: pokemon.type[0],
         name: pokemon.name,
-        imggif: pokemon.sprites['animated'],
+        imggif: changeName(pokemon.sprites['animated']),
         imgnormal: pokemon.sprites['normal'],
         imglarge: pokemon.sprites['large'],
         total: pokemon.total,
@@ -28,4 +28,13 @@ export async function getPokemons() : Promise<Pokemon[]> {
     );
 
     return unicosPokemons;
+}
+
+/* Correguir el nombre con el texto verdadero */
+export function changeName(name: string): string{
+    if(name.includes("farfetch'd")){
+        return name.replace("farfetch'd", "farfetchd");
+    }else{
+        return name;
+    }
 }
