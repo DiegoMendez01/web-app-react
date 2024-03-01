@@ -34,7 +34,7 @@ const Listado = () => {
                             <Card.Header>Tipo: {pokemons.type}</Card.Header>
                             <Card.Img width="80" height="100" variant="top" src={pokemons.imggif} className="d-block mx-auto w-50" />
                             <Card.Body>
-                                <Card.Title className="text-center">{pokemons.name}</Card.Title>
+                                <Card.Title className="text-center"><b>{pokemons.id} - {pokemons.name}</b></Card.Title>
                                 <ListGroup>
                                     <ListGroup.Item><b>HP:</b> {pokemons.hp}</ListGroup.Item>
                                     <ListGroup.Item><b>Ataque:</b> {pokemons.attack}</ListGroup.Item>

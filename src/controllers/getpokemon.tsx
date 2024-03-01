@@ -22,5 +22,10 @@ export async function getPokemons() : Promise<Pokemon[]> {
         speed: pokemon.speed
     }));
 
-    return pokemons;
+    const unicosPokemons = pokemons.filter(
+        (pokemon:any, index: number) =>
+        pokemons.findIndex((other:any) => other.id === pokemon.id) === index
+    );
+
+    return unicosPokemons;
 }
